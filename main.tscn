@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhp15dcmgvwf1"]
+
+[ext_resource type="Script" uid="uid://br1a5l8wehc82" path="res://Player.cs" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://c2tahi7yp40vn" path="res://icon.svg" id="1_ig7tw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+
+[node name="Main" type="Node2D"]
+
+[node name="ParticleSystem" type="Node2D" parent="."]
+
+[node name="PhysicsDemo" type="Node2D" parent="."]
+
+[node name="LaserSystem" type="Node2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(545, 349)
+motion_mode = 1
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_ig7tw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(6.43568, 6.20851)
+shape = SubResource("RectangleShape2D_0xm2m")
