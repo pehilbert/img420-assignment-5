@@ -10,6 +10,8 @@ public partial class ParticleController : Node2D
 	public float InitialIntensity = 0.5f;
 	[Export]
 	public float IntensityVariance = 3.0f;
+	[Export]
+	public float IntensityFrequency = 1.0f;
 
 	public override void _Ready()
 	{
@@ -31,7 +33,7 @@ public partial class ParticleController : Node2D
 
 		if (_shaderMaterial != null)
 		{
-			float intensityIncrease = Mathf.Sin(_time) * IntensityVariance;
+			float intensityIncrease = Mathf.Sin(_time * IntensityFrequency) * IntensityVariance;
 			float currentIntensityX = (float)_shaderMaterial.GetShaderParameter("wave_intensity_x");
 			float currentIntensityY = (float)_shaderMaterial.GetShaderParameter("wave_intensity_y");
 			_shaderMaterial.SetShaderParameter("wave_intensity_x", InitialIntensity + intensityIncrease);

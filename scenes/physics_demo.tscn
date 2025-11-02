@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu3b2wlu6qfxv"]
+
+[ext_resource type="Script" uid="uid://dfia0wjmqn1es" path="res://scripts/PhysicsChain.cs" id="1_x6xia"]
+[ext_resource type="PackedScene" uid="uid://bu7hhc2xdxccy" path="res://scenes/chain_segment.tscn" id="2_h0gum"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h0gum"]
+b = Vector2(0, 0)
+
+[node name="PhysicsDemo" type="Node2D"]
+script = ExtResource("1_x6xia")
+SegmentScene = ExtResource("2_h0gum")
+
+[node name="Base" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
+shape = SubResource("SegmentShape2D_h0gum")
