@@ -13,7 +13,7 @@ config_version=5
 config/name="Assignment 5"
 run/main_scene="uid://dhp15dcmgvwf1"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [dotnet]
 
