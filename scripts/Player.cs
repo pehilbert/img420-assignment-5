@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class Player : CharacterBody2D
+public partial class Player : RigidBody2D
 {
 	[Export] public float Speed = 200f;
 
@@ -29,7 +29,6 @@ public partial class Player : CharacterBody2D
 			velocity.Y -= 1;
 		}
 
-		Velocity = velocity * Speed;
-		MoveAndSlide();
+		LinearVelocity = velocity * Speed;
 	}
 }

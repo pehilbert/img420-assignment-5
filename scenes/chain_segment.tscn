@@ -4,7 +4,7 @@
 size = Vector2(15.1247, 72)
 
 [node name="ChainSegment" type="RigidBody2D"]
-mass = 0.05
+mass = 0.001
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -8.0

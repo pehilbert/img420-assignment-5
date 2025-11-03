@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public partial class PhysicsChain : Node2D
 {
-	[Export] public int ChainSegments = 5;
+	[Export] public int ChainSegments = 8;
 	[Export] public float SegmentDistance = 20f;
 	[Export] public float JointSoftness = 20f;
-	[Export] public Vector2 InitialForce = new Vector2(1000, 0);
+	[Export] public Vector2 InitialForce = new Vector2(10, 0);
 	[Export] public PackedScene SegmentScene;
 
 	private List<RigidBody2D> _segments = new List<RigidBody2D>();
@@ -40,7 +40,7 @@ public partial class PhysicsChain : Node2D
 		{
 			RigidBody2D previousSegment = _segments[segment];
 			RigidBody2D currentSegment = SegmentScene.Instantiate<RigidBody2D>();
-			currentSegment.Position = previousSegment.Position + new Vector2(0, SegmentDistance * 2);
+			currentSegment.Position = previousSegment.Position + new Vector2(0, SegmentDistance * 3);
 			_segments.Add(currentSegment);
 			AddChild(currentSegment);
 
